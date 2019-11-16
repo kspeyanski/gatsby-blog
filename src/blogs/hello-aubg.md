@@ -1,6 +1,7 @@
 ---
 title: Hello "The Hub"
 path: introduction
+image: blogs/the-hub.png
 ---
 
 # Hello "The Hub"
