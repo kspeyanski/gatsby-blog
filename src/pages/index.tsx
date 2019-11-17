@@ -1,9 +1,10 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-
+import Image from 'gatsby-image';
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+
+import '../styles/main.css';
 
 const IndexPage = () => {
   const allPagesResp = useStaticQuery(graphql`
@@ -14,6 +15,19 @@ const IndexPage = () => {
           frontmatter {
             title
             path
+            image
+          }
+        }
+      }
+      allImageSharp {
+        nodes {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+          parent {
+            ...on File {
+              relativePath
+            }
           }
         }
       }
@@ -22,11 +36,15 @@ const IndexPage = () => {
 
   return (<Layout>
     <SEO title="Home" />
-    <ul>
+    <ul className="list-unstyled">
       {allPagesResp.allMarkdownRemark.nodes.map((node) => (
-        <li key={node.frontmatter.title}>
-          <Link to={node.frontmatter.path}>
-            {node.frontmatter.title}
+        <li className="list-item" key={node.frontmatter.title}>
+          <Link className="card" to={node.frontmatter.path}>
+            <Image
+              style={{ width: 100, height: 100 }}
+              fluid={allPagesResp.allImageSharp.nodes.find(i => i.parent.relativePath === node.frontmatter.image).fluid}
+            />
+            <h5 className="card-title">{node.frontmatter.title}</h5>
           </Link>
         </li>
       ))}
