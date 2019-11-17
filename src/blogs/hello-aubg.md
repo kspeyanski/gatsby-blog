@@ -1,6 +1,7 @@
 ---
 title: Hello "The Hub"
 path: introduction
+image: the-hub.png
 ---
 
 # Hello "The Hub"
