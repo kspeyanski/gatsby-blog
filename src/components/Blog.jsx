@@ -1,12 +1,15 @@
 import React from 'react'
+import Layout from './layout';
 
 const Blog = (props) => {
     return (
-        <div
-            dangerouslySetInnerHTML={{
-                __html: props.pageContext.html
-            }}
-        />
+        <Layout>
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: props.pageContext.html
+                }}
+            />
+        </Layout>
     )
 }
 
