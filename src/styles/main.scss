@@ -1,0 +1,29 @@
+.list-unstyled {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+.card {
+  display: block;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
+
+  box-shadow: 0 0 0 0 black;
+  transition: box-shadow 0.2s ease-in-out;
+
+  &:hover {
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  .card-title {
+    margin-top: 0.5rem;
+  }
+
+  .gatsby-image-wrapper {
+    margin: auto;
+  }
+}
