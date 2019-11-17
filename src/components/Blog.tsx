@@ -1,4 +1,5 @@
 import React from 'react';
+import Layout from './layout';
 
 export interface BlogPageContext {
     html: string;
@@ -14,11 +15,13 @@ export interface BlogProps {
 
 const Blog = (props: BlogProps) => {
     return (
-        <div
-            dangerouslySetInnerHTML={{
-                __html: props.pageContext.html
-            }}
-        />
+        <Layout>
+            <div
+                dangerouslySetInnerHTML={{
+                    __html: props.pageContext.html
+                }}
+            />
+        </Layout>
     )
 }
 
