@@ -20,4 +20,10 @@ My name is Kiril and i'm here to introduce you to Gatsby.js and how easy is it t
 - ~~Learn how to create pages~~
 - ~~...Layout component?~~
 - ~~How to source data using the "useStaticQuery" hook~~
-- Images in Gatsby
+- ~~Images in Gatsby~~
+
+## What else do we need
+
+A cute animal
+
+![Cute Cat](./cat.jpeg)
