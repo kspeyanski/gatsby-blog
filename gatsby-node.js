@@ -18,6 +18,7 @@ exports.createPages = async (api) => {
                 frontmatter {
                     title
                     path
+                    image
                 }
             }
         }
@@ -26,7 +27,7 @@ exports.createPages = async (api) => {
     Promise.all(resp.data.allMarkdownRemark.nodes.map(async (node) => {
         await api.actions.createPage({
             path: node.frontmatter.path,
-            context: node,
+            context: { ...node, image: node.frontmatter.image },
             component: BlogTemplate
         })
     }))
