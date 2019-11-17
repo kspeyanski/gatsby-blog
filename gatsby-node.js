@@ -18,6 +18,7 @@ exports.createPages = async (api) => {
                 frontmatter {
                     title
                     path
+                    image
                 }
             }
         }
@@ -28,7 +29,7 @@ exports.createPages = async (api) => {
         await api.actions.createPage({
             path: node.frontmatter.path,
             component: BlogTemplate,
-            context: node
+            context: {...node, image: node.frontmatter.image}
         })
     }))
 }
