@@ -1,5 +1,6 @@
 ---
 title: Hello "The Hub"
+path: introduction
 ---
 
 # Hello "The Hub"
